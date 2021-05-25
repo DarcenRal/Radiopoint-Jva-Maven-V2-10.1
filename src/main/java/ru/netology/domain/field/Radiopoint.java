@@ -20,13 +20,10 @@ public class Radiopoint {
         this.maxChannal = maxChannal;
     }
 
-    public Radiopoint(int maxVolume, int minVolume, int maxChannal, int minChannal, int currentVolume, int currentChannal) {
+    public Radiopoint(int maxVolume, int minVolume, int currentVolume) {
         this.maxVolume = maxVolume;
         this.minVolume = minVolume;
-        this.maxChannal = maxChannal;
-        this.minChannal = minChannal;
         this.currentVolume = currentVolume;
-        this.currentChannal = currentChannal;
     }
 
     public int getMinChannal() {

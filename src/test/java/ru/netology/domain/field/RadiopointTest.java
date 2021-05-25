@@ -23,18 +23,16 @@ class RadiopointTest {
 
     @Test
     void decreaseVolume() {
-        Radiopoint radiopoint = new Radiopoint();
-        radiopoint.setCurrentVolume(5);
+        Radiopoint radiopoint = new Radiopoint(100, 0, 30);
         radiopoint.decreaseVolume();
-        assertEquals(4, radiopoint.getCurrentVolume());
+        assertEquals(29, radiopoint.getCurrentVolume());
     }
 
     @Test
     void increaseVolume() {
-        Radiopoint radiopoint = new Radiopoint();
-        radiopoint.setCurrentVolume(5);
+        Radiopoint radiopoint = new Radiopoint(100, 0, 30);
         radiopoint.increaseVolume();
-        assertEquals(6, radiopoint.getCurrentVolume());
+        assertEquals(31, radiopoint.getCurrentVolume());
     }
 
     @Test
@@ -54,17 +52,9 @@ class RadiopointTest {
     }
 
     @Test
-    public void previousChannelFromMin() {
-        Radiopoint radiopoint = new Radiopoint(0,80,90,9,20,9);
-        radiopoint.decreaseChannal();
-        assertEquals(9, radiopoint.getCurrentChannal());
-    }
-
-    @Test
     public void setDesiredChannel() {
-        Radiopoint radiopoint = new Radiopoint();
-        radiopoint.setCurrentChannal(5);
-        assertEquals(5, radiopoint.getCurrentChannal());
+        Radiopoint radiopoint = new Radiopoint(1,10);
+        assertEquals(1, radiopoint.getCurrentChannal());
     }
     @Test
     public void increaseChannelFromMax() {
@@ -99,18 +89,16 @@ class RadiopointTest {
     }
 
     @Test
-    public void previousChannelFromValue() {
+    public void setCurrentChannelOver() {
         Radiopoint radiopoint = new Radiopoint();
         radiopoint.setCurrentChannal(20);
-        radiopoint.decreaseChannal();
-        assertEquals(9, radiopoint.getCurrentChannal());
+        assertEquals(10, radiopoint.getCurrentChannal());
     }
     @Test
     public void previousChannelFromMinus() {
         Radiopoint radiopoint = new Radiopoint();
-        radiopoint.setCurrentChannal(-20);
-        radiopoint.decreaseChannal();
-        assertEquals(9, radiopoint.getCurrentChannal());
+        radiopoint.setCurrentChannal(-1);
+        assertEquals(0, radiopoint.getCurrentChannal());
     }
 
     @Test
